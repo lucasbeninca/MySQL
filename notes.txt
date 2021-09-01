@@ -1,0 +1,11 @@
+UMA TABELA POSSUI:
+chave primária: nenhum dado pode ter uma chave primária repetida, exemplo CPF/ID
+chave extrangeira: faz a ligação entre duas ou mais tabelas em um banco de dados relacional, ou seja se eu tenho uma chave,
+	extrangeira como o CPF ligando uma 2° tabela com a primeira, eu não posso ter um CPF que não exteja previamente, cadastrado na primeira tabela, exemplo tabela de 
+	cadastro de clientes e tabela de vendas;
+índice: serve para facilitar a busca de registros nas tabelas(ele organiza os campos em ordem alfábetica por exemplo, assim quando vamos buscar um dado
+como o nome Vitorino ele já vai direto na letra V).
+
+UM GRUPO DE TABELAS FORMA UM "SQUEMA, ESQUEMAS"
+
+
