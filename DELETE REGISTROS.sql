@@ -1,0 +1,4 @@
+DELETE FROM tb_produtos WHERE PRODUTO = '10786280'
+
+
+SELECT * FROM tb_produtos;
