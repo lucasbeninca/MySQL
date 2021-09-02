@@ -46,7 +46,7 @@ where  id = 2;
 - para listar datas podemos usar os operadores lógicos citados acima e as seguintes condições no *select*: YEAR, MONTH o YEAR é uma função que pega o ano de uma data e retorna um numero inteiro, o mesmo é usado da seguinte forma select * from nome_tabela WHERE YEAR(campo_data) = 1995, o MONTH faz a mesma coisa porem com o mês e deve ser usado assim: SELECT * FROM nome_tabela WHERE MONTH(campo_data) = 10; 
 
 **USO DE FILTROS *AND* e *OR* **
-- modeos utilizar os filtros de  AND, ou seja levarem conta duas condições como *WHERE (idade >= 18 and idade <= 22 and sexo = 'M');* e juntar o resultado disto com outra condição, usando o *OR* então teriamos: *WHERE (idade >= 18 and idade <= 22 and sexo = 'M')
+- Podeos utilizar os filtros de  AND, ou seja levarem conta duas condições como *WHERE (idade >= 18 and idade <= 22 and sexo = 'M');* e juntar o resultado disto com outra condição, usando o *OR* então teriamos: *WHERE (idade >= 18 and idade <= 22 and sexo = 'M')
 or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os resultados de cadastros de clientes com idade entre 18 e 22 anos que sejam do sexo maisculino ou, entre estes, que moram na cidade de Rio de Janeiro, ou no bairro jardins; **OU SEJA IDADE ENTRE 18 E 22 ANOS E SEXO MASCULINO, OU MORAM NO RIO OU NO BAIRRO JARDINS**.
 
 
