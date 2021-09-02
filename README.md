@@ -26,3 +26,9 @@ where  id = 2;
 **REMOVER UMA COLUNA DA TABLEA**
 - alter tale base.nome_tabela drop column nome_campo;
 
+**LIMITANDO A SAÍDA DOS CAMPOS**
+- select cpf, nome from tbcliente limit 5; /* o limit limita o número deresultados*/
+
+**CRIANDO UM ALIAS**
+- select CPF as CPF_Cliente, nome as nome_cliente from tbcliente; /*alias para as colunas  */
+
