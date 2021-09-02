@@ -42,5 +42,8 @@ where  id = 2;
   - <> diferente que o que estiver a direita
 - *O MYSQL não consegue usar os operadores como = <> ou >=, <= para campos do tipo FLOAT*, necessário utilizar o **BETWEEN**: select * from nome_tablea where preco_lista BETWEEN 10 AND 12; retorna os valores entre 10 e 12, assim podemos listar campos de ponto flutuante.
 
+**CONTROLE DE DATAS**
+- para listar datas podemos usar os operadores lógicos citados acima e as seguintes condições no *select*: YEAR, MONTH o YEAR é uma função que pega o ano de uma data e retorna um numero inteiro, o mesmo é usado da seguinte forma select * from nome_tabela WHERE YEAR(campo_data) = 1995, o MONTH faz a mesma coisa porem com o mês e deve ser usado assim: SELECT * FROM nome_tabela WHERE MONTH(campo_data) = 10; 
+
 
 
