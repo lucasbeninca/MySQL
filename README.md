@@ -50,7 +50,7 @@ where  id = 2;
 or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os resultados de cadastros de clientes com idade entre 18 e 22 anos que sejam do sexo maisculino ou, entre estes, que moram na cidade de Rio de Janeiro, ou no bairro jardins; **OU SEJA IDADE ENTRE 18 E 22 ANOS E SEXO MASCULINO, OU MORAM NO RIO OU NO BAIRRO JARDINS**.
 
 **IN**
-- o In pode ser utilizado no lugar do or, por exemplo em vez de fazer SELECT * FROM nome_table WHERE cidade = 'xx' OR cidade ='xx'; eu posso fazer SELECT * FROM nome_tabela WHERE cidade in('xx','xxx');
+- O IN pode ser utilizado no lugar do or, por exemplo em vez de fazer SELECT * FROM nome_table WHERE cidade = 'xx' OR cidade ='xx'; eu posso fazer SELECT * FROM nome_tabela WHERE cidade in('xx','xxx');
 
 **LIKE**
 
