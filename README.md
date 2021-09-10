@@ -65,6 +65,7 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 
 **GROUP BY AND SUM,MAX,MIN,AVG,COUNT**
 - podemos usar o GROUP BY para agrupar resultados iguais em uma tabela, SELECT campo FROM nome_tabela GROUP BY campo;
+- por exemplo em uma tabela ondetesmo os seguintes registros : 
 
 | X  |  Y  |
 | ------------------- | ------------------- |
@@ -74,6 +75,23 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 | B | 3 |
 | B | 1 |
 
+- se utilizarmos o SUM da seguinte forma SELECT x, SUM (y) FROM nome_tabela GROUP BY x; , teremos o seguinte resultado
+
+| X  |  Y  |
+| ------------------- | ------------------- |
+| A | 3 |
+| B | 6 |
+
+- ou seja o mySQL vai agrupar os valores iguais da coluna X no caso A e B e vai somar os valores da coluna Y 
+- ALEM DO SUM TEMOS: 
+
+| operadores | ... |
+| ------------------- | ------------------- |
+| SUM  | SOMA |
+| MAX | TRAZ O MAIOR NÚMERO |
+| MIN | TRAZ O MENOR NÚMERO |
+| AVG | TRAZ A MÉDIA DOS NÚMEROS |
+| COUNT | CONTA AS OCORRÊNCIAS |
 
 
 
