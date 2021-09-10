@@ -1,0 +1,1 @@
+select * from notas_fiscais where date(data_venda) = '2017-01-01' limit 10;
