@@ -60,5 +60,10 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 **DISTINCT**
 - DISTINCT é usado para trazer os registros diferentes, SELECT DISTINCT * FROM nome_tabela.
 
+**ORDER BY**
+- ORDER BY é utilizado para ordenar o resultado do select, SELECT * FROM nome_tabela ORDER BY campo, se eu usar o DESC no final a ordenaçao é de forma decresendte. do maior para o menor.
+
+
+
 
 
