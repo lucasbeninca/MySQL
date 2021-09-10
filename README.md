@@ -91,7 +91,7 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 | MAX | TRAZ O MAIOR NÚMERO |
 | MIN | TRAZ O MENOR NÚMERO |
 | AVG | TRAZ A MÉDIA DOS NÚMEROS |
-| COUNT | CONTA AS OCORRÊNCIAS |
+| COUNT | CONTA AS OCORRÊNCIAS no caso da tabela a cima o A teria 2 na coluna Y e o B teria 3 na coluna Y  |
 
 
 
