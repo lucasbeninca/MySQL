@@ -53,6 +53,9 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 - O IN pode ser utilizado no lugar do or, por exemplo em vez de fazer SELECT * FROM nome_table WHERE cidade = 'xx' OR cidade ='xx'; eu posso fazer SELECT * FROM nome_tabela WHERE cidade in('xx','xxx');
 
 **LIKE**
+- SELECT * FROM nome_tabela WHERE nome LIKE '%xxxx%'; o % é utilizado como um * para representar qualquer registro genérico.
+- quando colocamos algo entre '%algum_registro_que_quero_buscar%' o mySQL retorna tudos os registros que tem aquele registro, como por exemplo '%Beninca%' o mySQL vai retornar todos os nomes que tem Beninca em alguma parte dele.
+- quando colocamos '%Beninca' o mySQl vai retornar apenas os registros que possuem Beninca no final do nome.
 
 
 
