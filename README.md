@@ -63,6 +63,17 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 **ORDER BY**
 - ORDER BY é utilizado para ordenar o resultado do select, SELECT * FROM nome_tabela ORDER BY campo, se eu usar o DESC no final a ordenaçao é de forma decresendte. do maior para o menor.
 
+**GROUP BY AND SUM,MAX,MIN,AVG,COUNT**
+- podemos usar o GROUP BY para agrupar resultados iguais em uma tabela, SELECT campo FROM nome_tabela GROUP BY campo;
+
+| X  |  Y  |
+| ------------------- | ------------------- |
+| A | 2 |
+| A | 1 |
+| B | 2 |
+| B | 3 |
+| B | 1 |
+
 
 
 
