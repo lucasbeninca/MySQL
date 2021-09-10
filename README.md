@@ -57,5 +57,42 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 - quando colocamos algo entre '%algum_registro_que_quero_buscar%' o mySQL retorna tudos os registros que tem aquele registro, como por exemplo '%Beninca%' o mySQL vai retornar todos os nomes que tem Beninca em alguma parte dele.
 - quando colocamos '%Beninca' o mySQl vai retornar apenas os registros que possuem Beninca no final do nome.
 
+**DISTINCT**
+- DISTINCT é usado para trazer os registros diferentes, SELECT DISTINCT * FROM nome_tabela.
+
+**ORDER BY**
+- ORDER BY é utilizado para ordenar o resultado do select, SELECT * FROM nome_tabela ORDER BY campo, se eu usar o DESC no final a ordenaçao é de forma decresendte. do maior para o menor.
+
+**GROUP BY AND SUM,MAX,MIN,AVG,COUNT**
+- podemos usar o GROUP BY para agrupar resultados iguais em uma tabela, SELECT campo FROM nome_tabela GROUP BY campo;
+- por exemplo em uma tabela ondetesmo os seguintes registros : 
+
+| X  |  Y  |
+| ------------------- | ------------------- |
+| A | 2 |
+| A | 1 |
+| B | 2 |
+| B | 3 |
+| B | 1 |
+
+- se utilizarmos o SUM da seguinte forma SELECT x, SUM (y) FROM nome_tabela GROUP BY x; , teremos o seguinte resultado
+
+| X  |  Y  |
+| ------------------- | ------------------- |
+| A | 3 |
+| B | 6 |
+
+- ou seja o mySQL vai agrupar os valores iguais da coluna X no caso A e B e vai somar os valores da coluna Y 
+- ALEM DO *(SUM)* TEMOS: 
+
+| OPERADORES | FUNÇÃO |
+| ------------------- | ------------------- |
+| SUM  | SOMA |
+| MAX | TRAZ O MAIOR NÚMERO |
+| MIN | TRAZ O MENOR NÚMERO |
+| AVG | TRAZ A MÉDIA DOS NÚMEROS |
+| COUNT | CONTA AS OCORRÊNCIAS no caso da tabela a cima o A teria 2 na coluna Y e o B teria 3 na coluna Y  |
+
+
 
 
