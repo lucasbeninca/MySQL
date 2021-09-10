@@ -57,5 +57,8 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 - quando colocamos algo entre '%algum_registro_que_quero_buscar%' o mySQL retorna tudos os registros que tem aquele registro, como por exemplo '%Beninca%' o mySQL vai retornar todos os nomes que tem Beninca em alguma parte dele.
 - quando colocamos '%Beninca' o mySQl vai retornar apenas os registros que possuem Beninca no final do nome.
 
+**DISTINCT**
+- DISTINCT é usado para trazer os registros diferentes, SELECT DISTINCT * FROM nome_tabela.
+
 
 
