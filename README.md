@@ -45,9 +45,17 @@ where  id = 2;
 **CONTROLE DE DATAS**
 - para listar datas podemos usar os operadores lógicos citados acima e as seguintes condições no *select*: YEAR, MONTH o YEAR é uma função que pega o ano de uma data e retorna um numero inteiro, o mesmo é usado da seguinte forma select * from nome_tabela WHERE YEAR(campo_data) = 1995, o MONTH faz a mesma coisa porem com o mês e deve ser usado assim: SELECT * FROM nome_tabela WHERE MONTH(campo_data) = 10; 
 
-**USO DE FILTROS *AND* e *OR* **
+**USO DE FILTROS *AND* e *OR***
 - Podeos utilizar os filtros de  AND, ou seja levarem conta duas condições como *WHERE (idade >= 18 and idade <= 22 and sexo = 'M');* e juntar o resultado disto com outra condição, usando o *OR* então teriamos: *WHERE (idade >= 18 and idade <= 22 and sexo = 'M')
 or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os resultados de cadastros de clientes com idade entre 18 e 22 anos que sejam do sexo maisculino ou, entre estes, que moram na cidade de Rio de Janeiro, ou no bairro jardins; **OU SEJA IDADE ENTRE 18 E 22 ANOS E SEXO MASCULINO, OU MORAM NO RIO OU NO BAIRRO JARDINS**.
+
+**IN**
+- O IN pode ser utilizado no lugar do or, por exemplo em vez de fazer SELECT * FROM nome_table WHERE cidade = 'xx' OR cidade ='xx'; eu posso fazer SELECT * FROM nome_tabela WHERE cidade in('xx','xxx');
+
+**LIKE**
+- SELECT * FROM nome_tabela WHERE nome LIKE '%xxxx%'; o % é utilizado como um * para representar qualquer registro genérico.
+- quando colocamos algo entre '%algum_registro_que_quero_buscar%' o mySQL retorna tudos os registros que tem aquele registro, como por exemplo '%Beninca%' o mySQL vai retornar todos os nomes que tem Beninca em alguma parte dele.
+- quando colocamos '%Beninca' o mySQl vai retornar apenas os registros que possuem Beninca no final do nome.
 
 
 
