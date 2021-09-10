@@ -83,9 +83,9 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 | B | 6 |
 
 - ou seja o mySQL vai agrupar os valores iguais da coluna X no caso A e B e vai somar os valores da coluna Y 
-- ALEM DO SUM TEMOS: 
+- ALEM DO *(SUM)* TEMOS: 
 
-| operadores | ... |
+| OPERADORES | FUNÇÃO |
 | ------------------- | ------------------- |
 | SUM  | SOMA |
 | MAX | TRAZ O MAIOR NÚMERO |
