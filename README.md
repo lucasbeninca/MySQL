@@ -93,6 +93,8 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 | AVG | TRAZ A MÉDIA DOS NÚMEROS |
 | COUNT | CONTA AS OCORRÊNCIAS no caso da tabela a cima o A teria 2 na coluna Y e o B teria 3 na coluna Y  |
 
+----------------------------------------------------------------------------------------------------------------
+
 **DISTINCT**
 - SELECT DISTINCT * FROM nome_tabela; o DISTINCT retorna apenas as linhas que são diferentes, ou seja apenas uma linha com cada combinação de valor, não retornando, linhas com combinações iguáis.
 
