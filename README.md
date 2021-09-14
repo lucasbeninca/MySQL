@@ -102,6 +102,28 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 - Podemos utilizar o limit para limitar a saída de registros na tabela, da seguinte forma SELECT * FROM nome_tabela LIMIT 5;
 - desta forma como pode ser visto acima o MySQL vai retornar apenas os 5 primeiros registros da tabela, se quisermos, trazer mais registros do meio da tabela podemos usar da seguinte forma SELECT * FROM nome_tabela LIMIT 5,2; ou seja o MySQL vai trazer 2 registros apartir do 5 registro da tabela incluindo o 5 registro.
 
+**HAVING**
+
+- o HAVING é uma condição de filtro utilizada para filtra o resultado de uma agregação, como por exemplo o resultado de um GROUP BY, SELECT campo, SUM(campo) FROM nome_tabela GROUP BY campo HAVING SUM(campo); tendo a seguinte tabela:
+
+| X  |  Y  |
+| ------------------- | ------------------- |
+| A | 2 |
+| A | 1 |
+| B | 2 |
+| B | 3 |
+| B | 1 |
+
+- Ao fazer O SUM, SELECT campo(x), SUM(Y) FROM nome_tabela GROUP BY campo (X);  vou ter:
+
+| X  |  Y  |
+| ------------------- | ------------------- |
+| A | 3 |
+| B | 6 |
+
+- E se eu quiser apenas os resultados maiores que 5 eu fasso 
+
+
 
 
 
