@@ -93,6 +93,91 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 | AVG | TRAZ A MÉDIA DOS NÚMEROS |
 | COUNT | CONTA AS OCORRÊNCIAS no caso da tabela a cima o A teria 2 na coluna Y e o B teria 3 na coluna Y  |
 
+----------------------------------------------------------------------------------------------------------------
+
+**DISTINCT**
+- SELECT DISTINCT * FROM nome_tabela; o DISTINCT retorna apenas as linhas que são diferentes, ou seja apenas uma linha com cada combinação de valor, não retornando, linhas com combinações iguáis.
+
+**LIMIT**
+- Podemos utilizar o limit para limitar a saída de registros na tabela, da seguinte forma SELECT * FROM nome_tabela LIMIT 5;
+- desta forma como pode ser visto acima o MySQL vai retornar apenas os 5 primeiros registros da tabela, se quisermos, trazer mais registros do meio da tabela podemos usar da seguinte forma SELECT * FROM nome_tabela LIMIT 5,2; ou seja o MySQL vai trazer 2 registros apartir do 5 registro da tabela incluindo o 5 registro.
+
+**HAVING**
+
+- o HAVING é uma condição de filtro utilizada para filtra o resultado de uma agregação, como por exemplo o resultado de um GROUP BY, SELECT campo, SUM(campo) FROM nome_tabela GROUP BY campo HAVING SUM(campo); tendo a seguinte tabela:
+
+| X  |  Y  |
+| ------------------- | ------------------- |
+| A | 2 |
+| A | 1 |
+| B | 2 |
+| B | 3 |
+| B | 1 |
+
+- Ao fazer O SUM, SELECT campo(x), SUM(Y) FROM nome_tabela GROUP BY campo (X);  vou ter:
+
+| X  |  Y  |
+| ------------------- | ------------------- |
+| A | 3 |
+| B | 6 |
+
+- E se eu quiser apenas os resultados maiores que 5 eu fasso: SELECT campo(x), SUM(Y) FROM nome_tabela GROUP BY campo (X) HAVING SUM(Y) > 5;
+- então eu teria o seguinte resultado:
+
+| X  |  Y  |
+| ------------------- | ------------------- |
+| B | 6 |
+
+**CASE**
+
+- Muito parecido com um IF em programação, mas utilizado para caso determinado resultado apareça o SQL deve apresentar tal valor, exemplo caso valor maior que 5 mostrar produto caro, EXEMPLO de SYNTAXY:
+  
+  
+      select campo, campo2,
+        case
+	      when campo >= 12 then 'CARO'
+              when campo >= 7 and campo < 12 then 'EM CONTA'
+        else 'BARRATO'
+      end as STATUS_PRECO
+      from nome_tabela;
+      
+      
+- podemos também juntar outros comandos com o CASE  e ter um select mais complexo : 
+
+		select embalagen, preco_de_lista,
+		case
+		    when preco_de_lista >= 12 then 'CARO'
+		    when preco_de_lista >= 7 and preco_de_lista < 12 then 'EM CONTA'
+		    else 'BARRATO'
+		end as STATUS_PRECO, avg(PRECO_DE_LISTA) as preco_medio
+		from tabela_de_produtos 
+		group by embalagem,
+		case
+		    when preco_de_lista >= 12 then 'CARO'
+		    when preco_de_lista >= 7 and preco_de_lista < 12 then 'EM CONTA'
+		    else 'BARRATO'
+		end;
+--------------------------------------------------------------------------------------------------------------
+
+- PASSANDO O ALIAS DO CASE NO LUGAR DO CASE:
+
+		select embalagen, preco_de_lista,
+		case
+		    when preco_de_lista >= 12 then 'CARO'
+		    when preco_de_lista >= 7 and preco_de_lista < 12 then 'EM CONTA'
+		    else 'BARRATO'
+		end as STATUS_PRECO, avg(PRECO_DE_LISTA) as preco_medio
+		from tabela_de_produtos 
+		group by embalagem, status_preco;
+		
+		
+		
+- No lugar de passar o CASE novamente no GROUP BY eu posso passar o ALIAS dele ou seja STATUS_PRECO, desta forma eu estou mantenho o agrupamento por embalagem e pelo novo campo criado o CASE e chamado de (STATUS_PRECO), se eu fizer o GROUP BY e não passar o CASE, ou seu ALIAS no GROUP BY o MySQL vai apenas irá mostrar o resultado considerando o agrupamento por embalagem resultando em uma consulta com apenas os 3 primeiros registros OU SEJA: (um registro com GARRAFA um com PET e um com LATA, e a respectiva média dos valores destes produtos.
+
+
+
+
+
 
 
 
