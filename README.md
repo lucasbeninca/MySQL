@@ -172,7 +172,7 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 		
 		
 		
-- No lugar de passar o CASE novamente no GROUP BY eu posso passar o ALIAS dele ou seja STATUS_PRECO, desta forma eu mantenho o agrupamento por embalagem e pelo novo campo criado no CASE (STATUS_PRECO), se eu fizer o GROUP BY e não passar o CASE, OU seu ALIAS no GROUP BY o MySQL vai apenas mostrar o resultado considerando o agrupamento por embalagem resultando em uma consulta com apenas os 3 primeiros registros OU SEJA: (um registro com GARRAFA um com PET e um com LATA, e a respectiva média dos valores destes produtos.
+- No lugar de passar o CASE novamente no GROUP BY eu posso passar o ALIAS dele ou seja STATUS_PRECO, desta forma eu estou mantenho o agrupamento por embalagem e pelo novo campo criado o CASE e chamado de (STATUS_PRECO), se eu fizer o GROUP BY e não passar o CASE, ou seu ALIAS no GROUP BY o MySQL vai apenas irá mostrar o resultado considerando o agrupamento por embalagem resultando em uma consulta com apenas os 3 primeiros registros OU SEJA: (um registro com GARRAFA um com PET e um com LATA, e a respectiva média dos valores destes produtos.
 
 
 
