@@ -239,7 +239,7 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 | NULL | FOTOGRAFIA |
 | NULL | ARTESANATO |
 
-- *FULL JOIN* Retorna todos os registros de todas as tabelas da seguinte forma, os registros que tiverem correspondência
+- *FULL JOIN* Retorna todos os registros de todas as tabelas da com ou sem correspondência.
 
 		SELECT ALIAS.NOME ALIASb.HOBBY FROM tabela_esquerda ALIAS
 		FULL JOIN tabela_direita ALIAS
