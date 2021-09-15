@@ -1,4 +1,3 @@
-use sucus_vendas;
+select EMBALAGEM, TAMANHO from tabela_de_produtos;
 
-select distinct bairro from tabela_de_clientes 
-where cidade ='rio de janeiro';
+select distinct EMBALAGEM, TAMANHO from tabela_de_produtos;
