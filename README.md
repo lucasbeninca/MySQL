@@ -293,7 +293,7 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 | MARIA | FUTEBOL |
 | PEDRO | FUTEBOL
 | CLÁUDIA | FUTEBOL |
-| ... | ... | ... |
+| (...) | (...) |
        
 
 
