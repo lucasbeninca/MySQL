@@ -121,7 +121,13 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 | A | 3 |
 | B | 6 |
 
-- E se eu quiser apenas os resultados maiores que 5 eu fasso: SELECT campo(x), SUM(Y) FROM nome_tabela GROUP BY campo (X) HAVING SUM(Y) > 1000;
+- E se eu quiser apenas os resultados maiores que 5 eu fasso: SELECT campo(x), SUM(Y) FROM nome_tabela GROUP BY campo (X) HAVING SUM(Y) > 5;
+- então eu teria o seguinte resultado:
+
+| X  |  Y  |
+| ------------------- | ------------------- |
+| B | 6 |
+
 
 
 
