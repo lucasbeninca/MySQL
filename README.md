@@ -200,9 +200,9 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 
 - *LEFET JOIN* usado para trazer todos os campos da tabela a esquerda e apenas os campos que tem alguma correspondência, os demais campos sem correspondência da tabela da direita vem como NULL.
 
-		SELECT ALIAS.NOME B.HOBBY FROM tabela_esquerda ALIAS
+		SELECT ALIAS.NOME ALIASb.HOBBY FROM tabela_esquerda ALIAS
 		LEFT JOIN tabela_direita ALIAS
-		ON ALIAS.IDENTIFICADOR = ALIAS_B.IDENTIFICADOR;
+		ON ALIAS.IDENTIFICADOR = ALIASb.IDENTIFICADOR;
 		
 		
 | NOME |  IDENTIFICADOR  | X | IDENTIFICADOR | HOBBY |
@@ -212,21 +212,49 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 | PEDRO | 4 | - | 5 | FOTOGRAFIA |
 | CLÁUDIA | 5 | - | 8 | ARTESABATO |
 
+- O resultado do LEFT JOIN destas duas tabelas é:
+
+| NOME  | HOBBY  |
+| ------------------- | ------------------- |
+| JOÃO | PRAIA |
+| MARIA | FUTEBOL |
+| PEDRO | NULL |
+| CLÁUDIA | NULL |
 		
 		
 
 - *RIGHT JOIN* faz o mesmo que o LEFT JOIN, mas traz todos os campos databela a direita e apenas os que tem corrensponência da tabela da esquerda e os demais traz como NULL.
 
-		SELECT ALIAS.NOME B.HOBBY FROM tabela_esquerda ALIAS
+		SELECT ALIAS.NOME ALIASb.HOBBY FROM tabela_esquerda ALIAS
 		RIGHT JOIN tabela_direita ALIAS
-		ON ALIAS.IDENTIFICADOR = ALIAS_B.IDENTIFICADOR;
+		ON ALIAS.IDENTIFICADOR = ALIASb.IDENTIFICADOR;
 		
+		
+- O resultado do RIGHT JOIN destas duas tabelas é:
+
+| NOME  | HOBBY  |
+| ------------------- | ------------------- |
+| JOÃO | PRAIA |
+| MARIA | FUTEBOL |
+| NULL | FOTOGRAFIA |
+| NULL | ARTESANATO |
+
 - *FULL JOIN* Retorna todos os registros de todas as tabelas da seguinte forma, os registros que tiverem correspondência
 
-		SELECT ALIAS.NOME B.HOBBY FROM tabela_esquerda ALIAS
+		SELECT ALIAS.NOME ALIASb.HOBBY FROM tabela_esquerda ALIAS
 		FULL JOIN tabela_direita ALIAS
-		ON ALIAS.IDENTIFICADOR = ALIAS_B.IDENTIFICADOR;
+		ON ALIAS.IDENTIFICADOR = ALIASb.IDENTIFICADOR;
 	
+- O resultado do FULL JOIN destas duas tabelas é:
+
+| NOME  | HOBBY  |
+| ------------------- | ------------------- |
+| JOÃO | PRAIA |
+| MARIA | FUTEBOL |
+| PEDRO | NULL |
+| CLÁUDIA | NULL |
+| NULL | FOTOGRAFIA |
+| NULL | ARTESANATO |
 
 
 
