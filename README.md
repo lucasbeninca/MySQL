@@ -229,6 +229,12 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 		RIGHT JOIN tabela_direita ALIAS
 		ON ALIAS.IDENTIFICADOR = ALIASb.IDENTIFICADOR;
 		
+| NOME |  IDENTIFICADOR  | X | IDENTIFICADOR | HOBBY |
+| ------------------- | ------------------ | ------------------ | ----------------- | ------------------ | 
+| JOÃO | 1 | - | 1 | PRAIA |
+| MARIA | 3 | - | 3 | FUTEBOL |
+| PEDRO | 4 | - | 5 | FOTOGRAFIA |
+| CLÁUDIA | 5 | - | 8 | ARTESABATO |		
 		
 - O resultado do RIGHT JOIN destas duas tabelas é:
 
@@ -244,6 +250,13 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 		SELECT ALIAS.NOME ALIASb.HOBBY FROM tabela_esquerda ALIAS
 		FULL JOIN tabela_direita ALIAS
 		ON ALIAS.IDENTIFICADOR = ALIASb.IDENTIFICADOR;
+		
+| NOME |  IDENTIFICADOR  | X | IDENTIFICADOR | HOBBY |
+| ------------------- | ------------------ | ------------------ | ----------------- | ------------------ | 
+| JOÃO | 1 | - | 1 | PRAIA |
+| MARIA | 3 | - | 3 | FUTEBOL |
+| PEDRO | 4 | - | 5 | FOTOGRAFIA |
+| CLÁUDIA | 5 | - | 8 | ARTESABATO |
 	
 - O resultado do FULL JOIN destas duas tabelas é:
 
@@ -255,6 +268,33 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 | CLÁUDIA | NULL |
 | NULL | FOTOGRAFIA |
 | NULL | ARTESANATO |
+
+- *CROSS JOIN* O CROSS JOIN faz um produto carteseano de todas as relações.
+
+       SELECT ALIAS.nome, aliasb.HOBBY FROM
+       tabela_esquerda ALIAS, tabela_direita ALIASb
+       
+| NOME |  IDENTIFICADOR  | X | IDENTIFICADOR | HOBBY |
+| ------------------- | ------------------ | ------------------ | ----------------- | ------------------ | 
+| JOÃO | 1 | - | 1 | PRAIA |
+| MARIA | 3 | - | 3 | FUTEBOL |
+| PEDRO | 4 | - | 5 | FOTOGRAFIA |
+| CLÁUDIA | 5 | - | 8 | ARTESABATO |
+
+- O resultado do CROSS JOIN destas duas tabelas é:
+
+| NOME  | HOBBY  |
+| ------------------- | ------------------- |
+| JOÃO | PRAIA |
+| MARIA | PRAIA|
+| PEDRO | PRAIA|
+| CLÁUDIA | PRAIA |
+| JOÃO | FUTEBOL |
+| MARIA | FUTEBOL |
+| PEDRO | FUTEBOL
+| CLÁUDIA | FUTEBOL |
+| ... | ... | ... |
+       
 
 
 
