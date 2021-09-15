@@ -177,10 +177,26 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 **JOIN's**
 - *INNER JOIN* usado para fazer um select, com campos de duas ou mais tabelas:
 
-		select * from tabela_de_vendedores alias_tabela_de_vendedores
-		inner join notas_fiscais alias_notas_fiscais
-		on alias_vendedores.matricula = alias_notas.matricula; 
-		// ON: se refere ao campo que ambas as tabelas tem em comum.
+		SELECT ALIAS.nome, ALIAS.hobby FROM
+		tabela_esquerda ALIAS
+		INNER JOIN tabela_direita ALIASb
+		ON ALIAS.identificador = aliasb.identificador;
+		// o identificador é o campo que ambas as tabelas tem em comum.
+		
+| NOME |  IDENTIFICADOR  | X | IDENTIFICADOR | HOBBY |
+| ------------------- | ------------------ | ------------------ | ----------------- | ------------------ | 
+| JOÃO | 1 | - | 1 | PRAIA |
+| MARIA | 3 | - | 3 | FUTEBOL |
+| PEDRO | 4 | - | 5 | FOTOGRAFIA |
+| CLÁUDIA | 5 | - | 8 | ARTESABATO |
+
+- O resultado do INNER JOIN destas duas tabelas é:
+
+| NOME  | HOBBY  |
+| ------------------- | ------------------- |
+| JOÃO | PRAIA |
+| PRAIA | FUTEBOL |
+
 
 - *LEFET JOIN* usado para trazer todos os campos da tabela a esquerda e apenas os campos que tem alguma correspondência, os demais campos sem correspondência da tabela da direita vem como NULL.
 
