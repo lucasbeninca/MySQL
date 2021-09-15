@@ -182,6 +182,9 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
         on alias_vendedores.matricula = alias_notas.matricula; 
         // ON: se refere ao campo que ambas as tabelas tem em comum.
 
+- *LEFET JOIN* usado para trazer todos os campos da tabela a esquerda e apenas os campos que tem alguma correspondência, os demais campos sem correspondência da tabela da direita vem como NULL.
+- *RIGTH JOIN* faz o mesmo que o LEFT JOIN, mas traz todos os campos databela a direita e apenas os que tem corrensponência da tabela da esquerda e os demais traz como NULL.
+
 
 
 
