@@ -128,8 +128,18 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 | ------------------- | ------------------- |
 | B | 6 |
 
+**CASE**
 
-
+- Muito parecido com um IF em programação, mas utilizado para caso determinado resultado apareça o SQL deve apresentar tal valor, exemplo caso valor maior que 5 mostrar produto caro.
+  
+  
+      select nome_do_produto, preco_de_lista,
+       case
+	      when preco_de_lista >= 12 then 'CARO'
+        when preco_de_lista >= 7 and preco_de_lista < 12 then 'EM CONTA'
+       else 'BARRATO'
+      end as STATUS_PRECO
+      from tabela_de_produtos;
 
 
 
