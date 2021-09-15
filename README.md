@@ -157,10 +157,22 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 		    when preco_de_lista >= 7 and preco_de_lista < 12 then 'EM CONTA'
 		    else 'BARRATO'
 		end;
+--------------------------------------------------------------------------------------------------------------
+
+- PASSANDO O ALIAS DO CASE NO LUGAR DO CASE:
+
+		select embalagen, preco_de_lista,
+		case
+		    when preco_de_lista >= 12 then 'CARO'
+		    when preco_de_lista >= 7 and preco_de_lista < 12 then 'EM CONTA'
+		    else 'BARRATO'
+		end as STATUS_PRECO, avg(PRECO_DE_LISTA) as preco_medio
+		from tabela_de_produtos 
+		group by embalagem, status_preco;
 		
 		
 		
--
+- No lugar de passar o CASE novamente no GROUP BY eu posso passar o ALIAS dele ou seja STATUS_PRECO, desta forma eu mantenho o agrupamento por embalagem e pelo novo campo criado no CASE (STATUS_PRECO), se eu fizer o GROUP BY e não passar o CASE, OU seu ALIAS no GROUP BY o MySQL vai apenas mostrar o resultado considerando o agrupamento por embalagem resultando em uma consulta com apenas os 3 primeiros registros OU SEJA: (um registro com GARRAFA um com PET e um com LATA, e a respectiva média dos valores destes produtos.
 
 
 
