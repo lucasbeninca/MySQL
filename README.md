@@ -130,16 +130,38 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 
 **CASE**
 
-- Muito parecido com um IF em programação, mas utilizado para caso determinado resultado apareça o SQL deve apresentar tal valor, exemplo caso valor maior que 5 mostrar produto caro.
+- Muito parecido com um IF em programação, mas utilizado para caso determinado resultado apareça o SQL deve apresentar tal valor, exemplo caso valor maior que 5 mostrar produto caro, EXEMPLO de SYNTAXY:
   
   
-      select nome_do_produto, preco_de_lista,
-       case
-	      when preco_de_lista >= 12 then 'CARO'
-        when preco_de_lista >= 7 and preco_de_lista < 12 then 'EM CONTA'
-       else 'BARRATO'
+      select campo, campo2,
+        case
+	      when campo >= 12 then 'CARO'
+              when campo >= 7 and campo < 12 then 'EM CONTA'
+        else 'BARRATO'
       end as STATUS_PRECO
-      from tabela_de_produtos;
+      from nome_tabela;
+      
+      
+- podemos também juntar outros comandos com o CASE  e ter um select mais complexo : 
+
+		select embalagen, preco_de_lista,
+		case
+		    when preco_de_lista >= 12 then 'CARO'
+		    when preco_de_lista >= 7 and preco_de_lista < 12 then 'EM CONTA'
+		    else 'BARRATO'
+		end as STATUS_PRECO, avg(PRECO_DE_LISTA) as preco_medio
+		from tabela_de_produtos 
+		group by embalagem,
+		case
+		    when preco_de_lista >= 12 then 'CARO'
+		    when preco_de_lista >= 7 and preco_de_lista < 12 then 'EM CONTA'
+		    else 'BARRATO'
+		end;
+		
+		
+		
+-
+
 
 
 
