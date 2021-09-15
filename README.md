@@ -187,12 +187,30 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 		SELECT ALIAS.NOME B.HOBBY FROM tabela_esquerda ALIAS
 		LEFT JOIN tabela_direita ALIAS
 		ON ALIAS.IDENTIFICADOR = ALIAS_B.IDENTIFICADOR;
+		
+		
+| NOME |  IDENTIFICADOR  | X | IDENTIFICADOR | HOBBY |
+| ------------------- | ------------------ | ------------------ | ----------------- | ------------------ | 
+| JOÃO | 1 | - | 1 | PRAIA |
+| MARIA | 3 | - | 3 | FUTEBOL |
+| PEDRO | 4 | - | 5 | FOTOGRAFIA |
+| CLÁUDIA | 5 | - | 8 | ARTESABATO |
+
+		
+		
 
 - *RIGHT JOIN* faz o mesmo que o LEFT JOIN, mas traz todos os campos databela a direita e apenas os que tem corrensponência da tabela da esquerda e os demais traz como NULL.
 
 		SELECT ALIAS.NOME B.HOBBY FROM tabela_esquerda ALIAS
 		RIGHT JOIN tabela_direita ALIAS
 		ON ALIAS.IDENTIFICADOR = ALIAS_B.IDENTIFICADOR;
+		
+- *FULL JOIN* Retorna todos os registros de todas as tabelas da seguinte forma, os registros que tiverem correspondência
+
+		SELECT ALIAS.NOME B.HOBBY FROM tabela_esquerda ALIAS
+		FULL JOIN tabela_direita ALIAS
+		ON ALIAS.IDENTIFICADOR = ALIAS_B.IDENTIFICADOR;
+	
 
 
 
