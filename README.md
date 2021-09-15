@@ -174,6 +174,127 @@ or (cidade = 'Rio de Janeiro' or bairro = 'Jardins');*, onde isto nos traria, os
 		
 - No lugar de passar o CASE novamente no GROUP BY eu posso passar o ALIAS dele ou seja STATUS_PRECO, desta forma eu estou mantenho o agrupamento por embalagem e pelo novo campo criado o CASE e chamado de (STATUS_PRECO), se eu fizer o GROUP BY e não passar o CASE, ou seu ALIAS no GROUP BY o MySQL vai apenas irá mostrar o resultado considerando o agrupamento por embalagem resultando em uma consulta com apenas os 3 primeiros registros OU SEJA: (um registro com GARRAFA um com PET e um com LATA, e a respectiva média dos valores destes produtos.
 
+**JOIN's**
+- *INNER JOIN* usado para fazer um select, com campos de duas ou mais tabelas:
+
+		SELECT ALIAS.nome, ALIAS.hobby FROM
+		tabela_esquerda ALIAS
+		INNER JOIN tabela_direita ALIASb
+		ON ALIAS.identificador = aliasb.identificador;
+		// o identificador é o campo que ambas as tabelas tem em comum.
+		
+| NOME |  IDENTIFICADOR  | X | IDENTIFICADOR | HOBBY |
+| ------------------- | ------------------ | ------------------ | ----------------- | ------------------ | 
+| JOÃO | 1 | - | 1 | PRAIA |
+| MARIA | 3 | - | 3 | FUTEBOL |
+| PEDRO | 4 | - | 5 | FOTOGRAFIA |
+| CLÁUDIA | 5 | - | 8 | ARTESABATO |
+
+- O resultado do INNER JOIN destas duas tabelas é:
+
+| NOME  | HOBBY  |
+| ------------------- | ------------------- |
+| JOÃO | PRAIA |
+| PRAIA | FUTEBOL |
+
+
+- *LEFET JOIN* usado para trazer todos os campos da tabela a esquerda e apenas os campos que tem alguma correspondência, os demais campos sem correspondência da tabela da direita vem como NULL.
+
+		SELECT ALIAS.NOME ALIASb.HOBBY FROM tabela_esquerda ALIAS
+		LEFT JOIN tabela_direita ALIAS
+		ON ALIAS.IDENTIFICADOR = ALIASb.IDENTIFICADOR;
+		
+		
+| NOME |  IDENTIFICADOR  | X | IDENTIFICADOR | HOBBY |
+| ------------------- | ------------------ | ------------------ | ----------------- | ------------------ | 
+| JOÃO | 1 | - | 1 | PRAIA |
+| MARIA | 3 | - | 3 | FUTEBOL |
+| PEDRO | 4 | - | 5 | FOTOGRAFIA |
+| CLÁUDIA | 5 | - | 8 | ARTESABATO |
+
+- O resultado do LEFT JOIN destas duas tabelas é:
+
+| NOME  | HOBBY  |
+| ------------------- | ------------------- |
+| JOÃO | PRAIA |
+| MARIA | FUTEBOL |
+| PEDRO | NULL |
+| CLÁUDIA | NULL |
+		
+		
+
+- *RIGHT JOIN* faz o mesmo que o LEFT JOIN, mas traz todos os campos databela a direita e apenas os que tem corrensponência da tabela da esquerda e os demais traz como NULL.
+
+		SELECT ALIAS.NOME ALIASb.HOBBY FROM tabela_esquerda ALIAS
+		RIGHT JOIN tabela_direita ALIAS
+		ON ALIAS.IDENTIFICADOR = ALIASb.IDENTIFICADOR;
+		
+| NOME |  IDENTIFICADOR  | X | IDENTIFICADOR | HOBBY |
+| ------------------- | ------------------ | ------------------ | ----------------- | ------------------ | 
+| JOÃO | 1 | - | 1 | PRAIA |
+| MARIA | 3 | - | 3 | FUTEBOL |
+| PEDRO | 4 | - | 5 | FOTOGRAFIA |
+| CLÁUDIA | 5 | - | 8 | ARTESABATO |		
+		
+- O resultado do RIGHT JOIN destas duas tabelas é:
+
+| NOME  | HOBBY  |
+| ------------------- | ------------------- |
+| JOÃO | PRAIA |
+| MARIA | FUTEBOL |
+| NULL | FOTOGRAFIA |
+| NULL | ARTESANATO |
+
+- *FULL JOIN* Retorna todos os registros de todas as tabelas da com ou sem correspondência.
+
+		SELECT ALIAS.NOME ALIASb.HOBBY FROM tabela_esquerda ALIAS
+		FULL JOIN tabela_direita ALIAS
+		ON ALIAS.IDENTIFICADOR = ALIASb.IDENTIFICADOR;
+		
+| NOME |  IDENTIFICADOR  | X | IDENTIFICADOR | HOBBY |
+| ------------------- | ------------------ | ------------------ | ----------------- | ------------------ | 
+| JOÃO | 1 | - | 1 | PRAIA |
+| MARIA | 3 | - | 3 | FUTEBOL |
+| PEDRO | 4 | - | 5 | FOTOGRAFIA |
+| CLÁUDIA | 5 | - | 8 | ARTESABATO |
+	
+- O resultado do FULL JOIN destas duas tabelas é:
+
+| NOME  | HOBBY  |
+| ------------------- | ------------------- |
+| JOÃO | PRAIA |
+| MARIA | FUTEBOL |
+| PEDRO | NULL |
+| CLÁUDIA | NULL |
+| NULL | FOTOGRAFIA |
+| NULL | ARTESANATO |
+
+- *CROSS JOIN* O CROSS JOIN faz um produto carteseano de todas as relações.
+
+       SELECT ALIAS.nome, aliasb.HOBBY FROM
+       tabela_esquerda ALIAS, tabela_direita ALIASb
+       
+| NOME |  IDENTIFICADOR  | X | IDENTIFICADOR | HOBBY |
+| ------------------- | ------------------ | ------------------ | ----------------- | ------------------ | 
+| JOÃO | 1 | - | 1 | PRAIA |
+| MARIA | 3 | - | 3 | FUTEBOL |
+| PEDRO | 4 | - | 5 | FOTOGRAFIA |
+| CLÁUDIA | 5 | - | 8 | ARTESABATO |
+
+- O resultado do CROSS JOIN destas duas tabelas é:
+
+| NOME  | HOBBY  |
+| ------------------- | ------------------- |
+| JOÃO | PRAIA |
+| MARIA | PRAIA|
+| PEDRO | PRAIA|
+| CLÁUDIA | PRAIA |
+| JOÃO | FUTEBOL |
+| MARIA | FUTEBOL |
+| PEDRO | FUTEBOL
+| CLÁUDIA | FUTEBOL |
+| (...) | (...) |
+       
 
 
 
