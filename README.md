@@ -9,7 +9,7 @@
 
 **UPDATE**
 
-- update table nome_da_tabela set campos = 10, nome = 'lucas beninca', cpf = 08518656907, primeira_compra = 0, data_nascimento = '03-01-1996'
+- update table nome_da_tabela set campos = 10, nome = 'lucas beninca', cpf = 085xxxxxxxx, primeira_compra = 0, data_nascimento = '03-01-1996'
 where  id = 2; 
 
 **DELETE**
